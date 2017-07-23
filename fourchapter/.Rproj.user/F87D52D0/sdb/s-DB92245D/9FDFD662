@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "manager <- c(1,2,3,4,5)\ndate <- c(\"10/24/08\",\"10/28/08\",\"10/1/08\",\"10/12/08\",\"5/1/09\")\ncountry <- c(\"US\",\"US\",\"UK\",\"UK\",\"UK\")\ngender <- c(\"M\",\"F\",\"F\",\"M\",\"F\")\nage <- c(32,45,25,39,99)\nq1 <- c(5,3,3,3,2)\nq2 <- c(4,5,5,3,2)\nq3 <- c(5,2,5,4,1)\nq4 <- c(5,5,5,NA,2)\nq5 <- c(5,5,2,NA,1)\nleadership <- data.frame(manager,date,country,gender,age,q1,q2,q3,q4,q5,stringsAsFactors = FALSE)\n\n#变量的重编码\nleadership$age[leadership$age == 99] <- NA\nleadership$agecat[leadership$age > 75] <- \"Elder\"\nleadership$agecat[leadership$age >= 55 & leadership$age <= 75] <- \"Middle Aged\"\nleadership$agecat[leadership$age < 55] <- \"Young\"\n\n#紧凑的重编码\n# leadership <- within(leadership,{\n#   agecat <- NA\n#   agecat[age > 75] <- \"Elder\"\n#   agecat[age >= 55 & age <= 75] <- \"Middle Aged\"\n#   agecat[age < 55] <- \"Young\"\n# })\n\n#变量的重命名\n#fix(leadership)\n#names(leadership)[2] <- \"testdate\"\n#names(leadership)[6:10] <- c(\"item1\",\"item2\",\"item3\",\"item4\",\"item5\")\n\n#缺失值\nis.na(leadership[,6:10])\nnewdata <- na.omit(leadership)\n\ntoday <- Sys.Date()\nformat(today,format=\"%B %d %Y\")\nformat(today,format=\"%B\")\n\n#日期的算数运算\nstartdate <- as.Date(\"1995-10-08\")\nenddate <- as.Date(\"2017-04-24\")\ndays <- enddate - startdate\ndifftime(enddate,startdate,units = \"weeks\")\ndifftime(enddate,startdate,units = \"hours\")\ndob <- as.Date(\"1956-10-12\")\nformat(dob,format=\"%A\")\n\n#将日期转换为字符型变量\nstrDates <- as.character(date)\n\n#数据排序\nattach(leadership)\nnewdata <- leadership[order(gender,age),]\ndetach(leadership)\n\nattach(leadership)\nnewdata <- leadership[order(gender,-age),]\ndetach(leadership)\n\n\n\n\n\n\n",
+    "created" : 1492782948286.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3814225256",
+    "id" : "9FDFD662",
+    "lastKnownWriteTime" : 1493004646,
+    "last_content_update" : 1493004646972,
+    "path" : "~/fourchapter/leadership.R",
+    "project_path" : "leadership.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

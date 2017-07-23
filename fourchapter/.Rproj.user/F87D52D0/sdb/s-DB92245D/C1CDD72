@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#缺失值\ny <- c(1,2,3,NA)\nis.na(y)\n\n#在分析中排除缺失值\nx <- c(1,2,3,NA)\ny <- x[1] + x[2] + x[3] + x[4]\nz <- sum(x,na.rm = TRUE)\n\nx <- as.character(x)\n\n",
+    "created" : 1492958193849.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4017418377",
+    "id" : "C1CDD72",
+    "lastKnownWriteTime" : 1493003835,
+    "last_content_update" : 1493003835029,
+    "path" : "~/fourchapter/otheritem.R",
+    "project_path" : "otheritem.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
